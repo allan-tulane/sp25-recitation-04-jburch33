@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 04
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):**_______Joshua Burch__________________  
+**Name (Team Member 2):**__________Jackson Burch_______________
 
 
 In this lab you will practice using the `map` and `reduce` functions. These functions are commonly used together in a `map-reduce` framework, used by Google and others to parallelize and scale common computations.
@@ -38,6 +38,11 @@ To use this function to count words, you'll need to implement your own `map_f` a
 
 **Enter answer here**
 
+Work: O(n)
+
+Span: O(logn)
+
+
 
 5. Why are we going through all this trouble? Couldn't I just use this function to count words?
 
@@ -53,6 +58,10 @@ for doc in docs:
 What is the problem that prevents us from easily parallelizing this solution?
 
 **Enter answer here**
+
+Count has a shared mutable dictionary. Therefore when running count with parrellism count can be updated can be updated simultaneosly andupdate conflicting values 
+
+Each update to the counterm relies on the previous update, therefor makes parellism difficult, and should lilely be done sequentially.
 
 
 ## Part 2: Sentiment analysis
